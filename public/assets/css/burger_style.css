@@ -1,0 +1,53 @@
+body {
+    background-color: #83DCEA;
+}
+#titleDiv {
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 30%;
+    max-width: 300px;
+    
+}
+
+ul {
+    padding: 5px;
+}
+
+li {
+    padding: 5px;
+}
+
+button {
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #FFC48D;
+    margin-left: 5px;
+}
+
+#uneatenBurgerDiv {
+    float: left;
+    margin-left: 8%;
+}
+
+#eatenBurgerDiv {
+    float: right;
+    margin-right: 8%;
+}
+
+#addABurgerDiv {
+    position: absolute;
+    bottom: 10%;
+    left: 50%
+}
+
+.form-group {
+    margin-bottom: 10px;
+}

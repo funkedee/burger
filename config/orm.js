@@ -2,20 +2,26 @@
 var connection = require("./connection");
 
 var orm = {
+    // SELECT FROM mysql query
     selectAll: function (tableName, cb) {
-        connection.query("SELECT * FROM ?", [tableName], function (err, data) {
+        connection.query("SELECT * FROM "+ tableName +";", function (err, data) {
             if (err) throw err;
             cb(data);
         });
     },
+    // INSERT INTO mysql query
     insertOne: function (tableName, columns, values, cb) {
-        connection.query("INSERT INTO ? (?) VALUES (?)", [tableName, columns, values], function (err, data) {
+        var queryString = "INSERT INTO " + tableName + " (" + columns + ") VALUES (" + values.toString() + ");";
+        console.log(queryString);
+        connection.query(queryString, function (err, data) {
             if (err) throw err;
             cb(data);
         });
     },
+    // UPDATE mysql query
     updateOne: function (tableName, columns, newValue, id, cb) {
-        connection.query("UPDATE ? SET ? = ? WHERE id = ?", [tableName, columns, newValue, id], function (err, data) {
+        connection.query("UPDATE " + tableName + " SET " +
+        columns + " = " + newValue +  " WHERE id = " + id, function (err, data) {
             if (err) throw err;
             cb(data);
         });
