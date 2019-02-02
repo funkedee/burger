@@ -44,8 +44,8 @@ button {
 
 #addABurgerDiv {
     position: absolute;
-    bottom: 10%;
-    left: 50%
+    bottom: 10px;
+    left: 35%
 }
 
 .form-group {

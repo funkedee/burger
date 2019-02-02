@@ -11,9 +11,9 @@ var orm = {
     },
     // INSERT INTO mysql query
     insertOne: function (tableName, columns, values, cb) {
-        var queryString = "INSERT INTO " + tableName + " (" + columns + ") VALUES (" + values.toString() + ");";
+        var queryString = "INSERT INTO " + tableName + " (" + columns + ") VALUES (?);";
         console.log(queryString);
-        connection.query(queryString, function (err, data) {
+        connection.query(queryString, [values], function (err, data) {
             if (err) throw err;
             cb(data);
         });
